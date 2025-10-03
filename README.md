@@ -38,7 +38,7 @@ npm install
 ```
 
 ### 3. Configurar variáveis de ambiente
-Crie um arquivo `.env` na raiz do frontend com base no `.env.sample`:
+Crie um arquivo `.env` na raiz do frontend com base no `.env.example`:
 
 ```dotenv
 REACT_APP_API_URL=http://localhost:5000
