@@ -22,7 +22,7 @@ meu-app/
 ├── package.json
 ├── README.md
 └── .gitignore
-
+```
 ---
 ## ⚙️ Instalação e Execução
 
