@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "../components/ui/card";
 import { Sparkles, Cloud, MapPin } from "lucide-react";
 import aiIcon from "@/assets/ai-icon.jpg";
 import weatherIcon from "@/assets/weather-icon.jpg";

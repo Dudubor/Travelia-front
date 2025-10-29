@@ -1,10 +1,62 @@
-import { Button } from "@/components/ui/button";
-import { Sparkles } from "lucide-react";
+import { Button } from "../components/ui/button";
+import { useAuth } from '../contexts/AuthContext';
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-travel.jpg";
 
 export const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      {/* Auth Buttons */}
+     {/*  <div className="absolute top-4 right-4 z-20 flex gap-2">
+        {isAuthenticated ? (
+          <div className="flex items-center gap-3 bg-primary-foreground/10 backdrop-blur-sm px-4 py-2 rounded-full border border-primary-foreground/20">
+            <span className="text-primary-foreground text-sm">Olá, {user?.name}</span>
+            
+            <Button
+              size="sm"
+              variant="hero-outline"
+              onClick={() => navigate('/Viagens')}
+              className="gap-2 text-primary-foreground"
+            >
+              <TicketsPlane className="h-4 w-4" />
+              Minhas viagens
+            </Button>
+            
+            <Button
+              size="sm"
+              variant="hero-outline"
+              onClick={logout}
+              className="gap-2 text-primary-foreground"
+            >
+              <LogOut className="h-4 w-4" />
+              Sair
+            </Button>
+          </div>
+        ) : (
+          <>
+            <Button
+              size="sm"
+              variant="hero-outline"
+              onClick={() => navigate('/auth')}
+              className="gap-2 text-primary-foreground"
+            >
+              <LogIn className="h-4 w-4" />
+              Entrar
+            </Button>
+            <Button
+              size="sm"
+              variant="hero"
+              onClick={() => navigate('/auth')}
+              className="gap-2"
+            >
+              <UserPlus className="h-4 w-4" />
+              Registrar
+            </Button>
+          </>
+        )}
+      </div> */}
+
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -18,13 +70,6 @@ export const Hero = () => {
       {/* Content */}
       <div className="container relative z-10 px-4 md:px-6 text-center">
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 mb-6">
-            <Sparkles className="w-4 h-4 text-primary-foreground" />
-            <span className="text-sm font-medium text-primary-foreground">
-              Powered by AI
-            </span>
-          </div>
-          
           <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 leading-tight">
             Viaje com
             <span className="block bg-gradient-to-r from-secondary to-primary-foreground bg-clip-text text-transparent">
@@ -41,7 +86,8 @@ export const Hero = () => {
               size="lg" 
               variant="hero"
               className="text-lg px-8 py-6 h-auto"
-              onClick={() => document.getElementById('form-section')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => /* document.getElementById('form-section')?.scrollIntoView({ behavior: 'smooth' } */
+              navigate('/planejador-viagens')}
             >
               Criar Meu Roteiro
             </Button>

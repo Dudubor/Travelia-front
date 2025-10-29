@@ -1,18 +1,23 @@
 import { Check } from "lucide-react";
 
 const steps = [
-  {
+  { 
     number: "01",
+    title: "Crie sua conta gratuitamete!",
+    description: "Cadastre-se em poucos minutos e acesse seu roteiro de qualquer lugar!"
+  },
+  {
+    number: "02",
     title: "Informe seu destino",
     description: "Escolha para onde você quer ir e quando pretende viajar"
   },
   {
-    number: "02",
+    number: "03",
     title: "Personalize suas preferências",
     description: "Conte-nos sobre seus interesses, orçamento e estilo de viagem"
   },
   {
-    number: "03",
+    number: "04",
     title: "Receba seu roteiro",
     description: "Nossa IA cria um itinerário completo com sugestões de roupas para cada dia"
   }
@@ -20,14 +25,14 @@ const steps = [
 
 export const HowItWorks = () => {
   return (
-    <section className="py-24 bg-gradient-to-br from-background via-muted/20 to-background">
+    <section id="how-it-works" className="py-24 bg-gradient-to-br from-background via-muted/20 to-background">
       <div className="container px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Como funciona?
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Apenas 3 passos simples para sua viagem perfeita
+            Apenas 4 passos simples para sua viagem perfeita
           </p>
         </div>
 
