@@ -3,7 +3,6 @@ import { useAuth } from '../contexts/AuthContext';
 
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
-import Navbar from '../components/Navbar';
 
 const RecoverPassword: React.FC = () => {
     const [email, setEmail] = useState('');
@@ -25,7 +24,6 @@ const RecoverPassword: React.FC = () => {
 
     return (
         <>
-        <Navbar />
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
             <div className="max-w-md w-full p-6 bg-white border border-gray-300 rounded shadow-md">
                 <h2 className="text-center text-2xl font-bold mb-6">Recuperação de Senha</h2>

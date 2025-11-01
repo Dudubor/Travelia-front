@@ -8,8 +8,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs'
 import { toast } from 'sonner';
 import { Plane } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
-import axios from 'axios';
-import { Navbar } from '../components/Navbar';
 
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -18,8 +16,7 @@ const Auth = () => {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const { isAuthenticated, login, register } = useAuth();
-  const navigate = useNavigate();/* 
-  console.log("process.env.BACKEND_URL ==> ", process.env.BACKEND_URL); */
+  const navigate = useNavigate();
 
 
   async function handleLogin(email: string, password: string) {
@@ -82,7 +79,6 @@ const Auth = () => {
   return (
     <>
 
-      <Navbar />
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-primary/5 p-4">
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
