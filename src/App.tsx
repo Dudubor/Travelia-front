@@ -20,7 +20,7 @@ const AppContent = () => {
   const { loading } = useAuth();
   if (loading) return null;
 
-
+  console.log("BACKEND_URL:", import.meta.env.VITE_BACKEND_URL);
   return (
     <TooltipProvider>
       <Toaster />
