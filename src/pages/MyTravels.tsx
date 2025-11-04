@@ -140,7 +140,7 @@ export const MyTravels = () => {
             {travels.map((t, idx) => {
               const key = t.md_uid ?? t.id ?? `${idx}`;
               const href = t.md_uid
-                ? `/travel?md_uid=${encodeURIComponent(t.md_uid)}`
+                ? `/travels?md_uid=${encodeURIComponent(t.md_uid)}`
                 : "#";
 
               const start = t.start_date
