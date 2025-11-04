@@ -22,39 +22,51 @@ export const TravelPlanning = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        //testand
-
+        if (isLoading) return; // evita submit duplo
         setIsLoading(true);
+        try {
 
-        const formData = new FormData(e.currentTarget);
-        const travelData = Object.fromEntries(formData.entries());
-        const userId = user?.id
 
-        toast({
-            title: "Roteiro em desenvolvimento! 🎉",
-            description: "Em breve você receberá seu itinerário personalizado com sugestões de vestimentas.",
-        });
-        setIsLoading(true)
+            const formData = new FormData(e.currentTarget);
+            const travelData = Object.fromEntries(formData.entries());
+            const userId = user?.id
 
-        const response = await axios.post(
-            `${import.meta.env.VITE_BACKEND_URL ? import.meta.env.VITE_BACKEND_URL : 'https://travelia-backend-lxus.onrender.com'}/travel/CreateItinerary`,
-            {
-                travelData,
-                userId,
-            },
-            {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${localStorage.getItem('travelai_token')}`
+            toast({
+                title: "Roteiro em desenvolvimento! 🎉",
+                description: "Em breve você receberá seu itinerário personalizado com sugestões de vestimentas.",
+            });
+            setIsLoading(true)
+
+            const response = await axios.post(
+                `${import.meta.env.VITE_BACKEND_URL ? import.meta.env.VITE_BACKEND_URL : 'https://travelia-backend-lxus.onrender.com'}/travel/CreateItinerary`,
+                {
+                    travelData,
+                    userId,
+                },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('travelai_token')}`
+                    }
                 }
-            }
-        );
-        console.log("Itinerary response:", response.data.response.choices[0].message.content);
-        navigate('/myTravels')
+            );
+            console.log("Itinerary response:", response.data.response.choices[0].message.content);
+            navigate('/myTravels')
+        } catch (err: any) {
+            console.error("CreateItinerary error:", err);
+            toast({
+                title: "Falha ao gerar roteiro",
+                description:
+                    err?.response?.data?.message || "Tente novamente em instantes.",
+                variant: "destructive",
+            })
+        }
+        finally {
+
+            setIsLoading(false);
+        }
 
 
-
-        setIsLoading(false);
 
 
     };
