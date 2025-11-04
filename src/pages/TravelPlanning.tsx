@@ -37,7 +37,7 @@ export const TravelPlanning = () => {
         setIsLoading(true)
 
         const response = await axios.post(
-            `${import.meta.env.VITE_BACKEND_URL}/travel/CreateItinerary`,
+            `${import.meta.env.VITE_BACKEND_URL ? import.meta.env.VITE_BACKEND_URL : 'https://travelia-backend-lxus.onrender.com'}/travel/CreateItinerary`,
             {
                 travelData,
                 userId,

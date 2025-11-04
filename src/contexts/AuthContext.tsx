@@ -29,7 +29,7 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_BACKEND_URL, 
+  baseURL: import.meta.env.VITE_BACKEND_URL || 'https://travelia-backend-lxus.onrender.com', 
   withCredentials: true,
   headers: { "Content-Type": "application/json" },
 });

@@ -69,7 +69,7 @@ const TravelPage = () => {
             setLoadingMeta(true);
             setErrorMeta(null);
             const response = await axios.post(
-                `${import.meta.env.VITE_BACKEND_URL}/travel/fetchItineraryInfo`,
+                `${import.meta.env.VITE_BACKEND_URL ? import.meta.env.VITE_BACKEND_URL : 'https://travelia-backend-lxus.onrender.com'}/travel/fetchItineraryInfo`,
                 { userId, md_uid },
                 {
                     headers: {
@@ -109,7 +109,7 @@ const TravelPage = () => {
             setErrorMd(null);
 
             const response = await axios.post<ItineraryResponse>(
-                `${import.meta.env.VITE_BACKEND_URL}/travel/getItineraryMd`,
+                `${import.meta.env.VITE_BACKEND_URL ? import.meta.env.VITE_BACKEND_URL : 'https://travelia-backend-lxus.onrender.com'}/travel/getItineraryMd`,
                 { userId, md_uid },
                 {
                     headers: {

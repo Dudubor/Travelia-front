@@ -27,14 +27,13 @@ export const MyTravels = () => {
       setError(null);
 
       const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/travel/getTravels`,
+        `${import.meta.env.VITE_BACKEND_URL ? import.meta.env.VITE_BACKEND_URL : 'https://travelia-backend-lxus.onrender.com'}/travel/getTravels`,
         { userId },
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${
-              localStorage.getItem("travelai_token") || ""
-            }`,
+            Authorization: `Bearer ${localStorage.getItem("travelai_token") || ""
+              }`,
           },
         }
       );
@@ -43,20 +42,20 @@ export const MyTravels = () => {
       const list: Travel[] = Array.isArray(raw)
         ? raw
         : Array.isArray(raw?.data)
-        ? raw.data
-        : Array.isArray(raw?.rows)
-        ? raw.rows
-        : Array.isArray(raw?.[0])
-        ? raw[0]
-        : [];
+          ? raw.data
+          : Array.isArray(raw?.rows)
+            ? raw.rows
+            : Array.isArray(raw?.[0])
+              ? raw[0]
+              : [];
 
       setTravels(list.filter(Boolean));
     } catch (e: any) {
       console.error(e);
       setError(
         e?.response?.data?.message ||
-          e?.message ||
-          "Não foi possível carregar suas viagens."
+        e?.message ||
+        "Não foi possível carregar suas viagens."
       );
       setTravels([]);
     } finally {
@@ -90,10 +89,10 @@ export const MyTravels = () => {
 
       <header className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 text-center">
         <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xl font-medium bg-black/10 text-black border border-black/10">
-          🧳 Meus roteiros 
+          🧳 Meus roteiros
         </span>
         <h1 className="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight text-black">
-          
+
         </h1>
         <p className="mt-2 text-sm md:text-base text-black">
           {loading ? "Carregando..." : `${travels.length} viagem(ns)`}
