@@ -22,7 +22,7 @@ export const TravelPlanning = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-
+        //testand
 
         setIsLoading(true);
 
