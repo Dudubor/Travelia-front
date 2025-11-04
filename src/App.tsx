@@ -20,7 +20,6 @@ const AppContent = () => {
   const { loading } = useAuth();
   if (loading) return null;
 
-  console.log("BACKEND_URL:", import.meta.env.VITE_BACKEND_URL);
   return (
     <TooltipProvider>
       <Toaster />
@@ -30,9 +29,9 @@ const AppContent = () => {
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/auth" element={<Auth />} />
-          <Route path="/recover-password" element={<RecoverPassword />} />
-          <Route path="/travel-planning" element={<PrivateRoute><TravelPlanning /></PrivateRoute>} />
-          <Route path="/my-travels" element={<PrivateRoute><MyTravels /></PrivateRoute>} />
+          <Route path="/recoverPassword" element={<RecoverPassword />} />
+          <Route path="/travelPlanning" element={<PrivateRoute><TravelPlanning /></PrivateRoute>} />
+          <Route path="/myTravels" element={<PrivateRoute><MyTravels /></PrivateRoute>} />
           <Route path="/travel" element={<PrivateRoute><Travels /></PrivateRoute>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
