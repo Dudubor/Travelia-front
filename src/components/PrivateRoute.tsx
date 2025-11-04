@@ -10,6 +10,7 @@ interface PrivateRouteProps {
 const PrivateRoute = ({ children }: PrivateRouteProps) => {
   const navigate = useNavigate();
   const { user, loading } = useAuth();
+  console.log("user ==> ", user);
 
   if (!user && !loading) {
     toast.error('Você precisa estar logado para acessar esta página.');

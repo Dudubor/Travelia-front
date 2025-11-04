@@ -133,7 +133,7 @@ const Auth = () => {
                         className="px-0 text-sm text-muted-foreground hover:text-primary"
                         onClick={(e) => {
                           e.preventDefault();
-                          navigate('/recover-password');
+                          navigate('/recoverPassword');
                         }}
                       >
                         Esqueci minha senha

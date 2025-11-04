@@ -50,7 +50,7 @@ export const TravelPlanning = () => {
             }
         );
         console.log("Itinerary response:", response.data.response.choices[0].message.content);
-        navigate('/my-travels')
+        navigate('/myTravels')
 
 
 

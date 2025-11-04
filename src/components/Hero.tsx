@@ -38,7 +38,7 @@ export const Hero = () => {
               variant="hero"
               className="text-lg px-8 py-6 h-auto"
               onClick={() => /* document.getElementById('form-section')?.scrollIntoView({ behavior: 'smooth' } */
-                isAuthenticated ? navigate('/travel-planning') : navigate('/auth')
+                isAuthenticated ? navigate('/travelPlanning') : navigate('/auth')
               }
             >
               Criar Meu Roteiro

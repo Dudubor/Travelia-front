@@ -43,7 +43,7 @@ export const Navbar = () => {
                     size="sm"
                     variant="hero"
                     className="gap-2 hover:scale-105 transition-transform duration-200 shadow-md" 
-                    onClick={() => navigate('/travel-planning')}
+                    onClick={() => navigate('/travelPlanning')}
                   >
                     Criar Meu Roteiro
                   </Button>
@@ -51,7 +51,7 @@ export const Navbar = () => {
                   <Button
                     size="sm"
                     variant="hero-outline"
-                    onClick={() => navigate('/my-travels')}
+                    onClick={() => navigate('/myTravels')}
                     className="gap-2 hover:scale-105 transition-transform duration-200 shadow-md"
                   >
                     <TicketsPlane className="h-4 w-4" />
@@ -113,7 +113,7 @@ export const Navbar = () => {
             <div className="md:hidden flex items-center gap-1">
               {isAuthenticated ? (
                 <>
-                  <Button size="sm" variant="ghost" onClick={() => navigate('/my-travels')} className="p-2">
+                  <Button size="sm" variant="ghost" onClick={() => navigate('/myTravels')} className="p-2">
                     <TicketsPlane className="h-5 w-5" />
                   </Button>
                   <Button size="sm" variant="ghost" onClick={logout} className="p-2">
