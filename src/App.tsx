@@ -32,7 +32,7 @@ const AppContent = () => {
           <Route path="/recoverPassword" element={<RecoverPassword />} />
           <Route path="/travelPlanning" element={<PrivateRoute><TravelPlanning /></PrivateRoute>} />
           <Route path="/myTravels" element={<PrivateRoute><MyTravels /></PrivateRoute>} />
-          <Route path="/travel" element={<PrivateRoute><Travels /></PrivateRoute>} />
+          <Route path="/travels" element={<PrivateRoute><Travels /></PrivateRoute>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
