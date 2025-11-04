@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
@@ -15,8 +15,11 @@ export const TravelPlanning = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
   const navigate = useNavigate();
-
-  const BACKEND_URL =
+  
+const renders = useRef(0);
+console.log("renders", ++renders.current);
+  
+const BACKEND_URL =
     import.meta.env.VITE_BACKEND_URL || "https://travelia-backend-lxus.onrender.com";
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
